@@ -1,0 +1,46 @@
+<products>{{#obj}}
+  <product>
+  <baseId>{{baseId}}</baseId>
+  <isActive>{{isActive}}</isActive>
+  {{#if contentType}}
+    <contentType>
+      <contentTypeValue>{{contentType.[1].value}}</contentTypeValue>
+      <contentTypeValue>{{contentType.[2].value}}</contentTypeValue>
+    </contentType>
+  {{/if}}
+  {{#if feature}}
+    <features>
+      <feature>{{feature.[1]}}</feature>
+      <feature>{{feature.[2]}}</feature>
+    </features>
+  {{/if}}
+  {{#if searchTerms}}
+  <searchTerms>
+     <searchTermValue>{{searchTerms.[0]}}</searchTermValue>
+     <searchTermValue>{{searchTerms.[1]}}</searchTermValue>
+     <searchTermValue>{{searchTerms.[2]}}</searchTermValue>
+  </searchTerms>
+  {{/if}}
+  <childProducts>
+    {{#each childProducts}}
+      <childProduct>
+        <baseId>{{baseId}}</baseId>
+        <isActive>{{isActive}}</isActive>
+        {{#if feature}}
+        <features>
+          <feature>{{feature.[1]}}</feature>
+          <feature>{{feature.[2]}}</feature>
+        </features>
+        {{/if}}
+        {{#if searchTerms}}
+        <searchTerms>
+          <searchTermValue>{{searchTerms.[0]}}</searchTermValue>
+          <searchTermValue>{{searchTerms.[1]}}</searchTermValue>
+          <searchTermValue>{{searchTerms.[2]}}</searchTermValue>
+        </searchTerms>
+        {{/if}}
+      </childProduct>
+      {{/each}}
+  </childProducts>
+  </product>
+{{/obj}}</products>
