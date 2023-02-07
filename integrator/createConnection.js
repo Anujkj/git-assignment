@@ -1,10 +1,13 @@
 const request = require('request');
+require('dotenv').config()
+
+const TOKEN = process.env.TOKEN;
 
 const options = {
     url : "https://api.integrator.io/v1/connections",
     headers : {
         'Content-Type' : "application/json",
-        Authorization : "Bearer 9a92b97ffa3c4042a9d53ed97571513a"
+        Authorization : `Bearer ${TOKEN}`
     },
     body : JSON.stringify({
         "type": "netsuite",
